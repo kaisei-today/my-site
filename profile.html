@@ -57,7 +57,9 @@
         .current-page {
     color: #000000;    /* 好きな色に変えてね！ */
     font-weight: bold; /* 太字にする */
-    cursor: default;   /* マウスを置いても「指マーク」にならないようにする */ }
+    cursor: default;   /* マウスを置いても「指マーク」にならないようにする */
+    display: inline-block; /* ← これを入れると「文字選択」になりにくくなります */
+    padding: 0 10px;       /* 左右の余白を他のリンクと合わせる */ }
 
         .current-page:hover { color: #000000; }
 </style>
@@ -66,7 +68,7 @@
 <body>
     <nav class="mini-bookshelf">
         <a href="index.html" class="nav-link">🏠 トップに戻る</a>
-        <a span="profile.html" class="nav-link">📝 自己紹介</span>
+        <span class="nav-link current-page">📝 自己紹介</span>
         <a href="characters.html" class="nav-link">🌸 固定夢主</a>
         <a href="library.html" class="nav-link">📚 作品集</a>
         <a href="log.html" class="nav-link">📜 近況報告</a>
