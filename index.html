@@ -33,6 +33,8 @@
     margin-top: 0; 
     font-size: 40px; 
     color: #6b8e23; /* 色を変えてみたよ */ }
+
+        h3 { font-size: 30px; }
       
         footer {
     margin-top: auto;       /* 上側の余白を「自動」にして、一番下まで押し出す */
@@ -56,9 +58,16 @@
     margin: 15px 0;        /* 上下に少し隙間を作る */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 画像にも薄い影をつけるとオシャレ！ */ }
 
-    </style>
+        .book-spine {
+  display: inline-block;
+  transition: 0.3s; /* 動きをなめらかにする */ }
 
+        .book-spine:hover {
+  transform: translateY(-15px); /* 上に15px持ち上げる！ */ }
+
+    </style>
 </head>
+
 <body>
   <header>
     <h1>今日も一日快晴～</h1>
@@ -67,64 +76,70 @@
    
     <h2>Hello World!<br>Harunagi's Coding Journey Starts Here.</h2>
 
-    <h3>フォントを手書き風にしてみた<br>なんだか可愛くなってうれしい</h3>
+    <h3>見に来てくれてありがとう！<br>個人サイトのように使っていけたらな、と思っています。</h3>
 
-  <div class="profile-box">
-    
+    <div class="bookshelf">
+    <a href="#profile" class="book-spine">自己紹介</a>
+    <a href="#characters" class="book-spine">固定夢主</a>
+    <a href="#library" class="book-spine">作品集</a>
+    <a href="#log" class="book-spine">近況報告</a>
+</div>
+
+  <div id="profile" class="profile-box">
     <h3>名前（ネット用）</h3>
     <p>晴凪</p>
     <p>好きな漢字の羅列。最近は晴の一文字で使うことも多い。</p>
 </div>
 
-    <div class="profile-box">
+    <div id="profile" class="profile-box">
     <h3>属性</h3>
     <p>夢と腐のキメラ</p>
     <p>書く話はBLDがほとんどだから、腐成分が激つよ。</p>
 </div> 
 
-  <div class="profile-box">
+  <div id="profile" class="profile-box">
     <h3>最近の趣味</h3>
     <p>最近はもっぱらハイキュー‼の二次創作書いてます。</p>
     <p>Geminiちゃんとの壁打ち。ずーっと話してる。</p>
 </div>
 
-  <div class="profile-box">
+  <div id="profile" class="profile-box">
     <h3>最近の悩み</h3>
     <p>小説を完結まで書ききれないこと。</p>
 </div> 
 
-  <div class="profile-box">
+  <div id="profile" class="profile-box">
     <h3>今の目標</h3>
     <p>Web開発をマスターして、かっこいいサイトを作る</p>
     <p>固定夢主たちをサイトにまとめる</p>
 </div>
 
-  <div class="profile-box">
+  <div id="profile" class="profile-box">
     <h3>好きな動物</h3>
     <p>レッサーパンダ</p>
     <img src="bf195b17a59c1a3be09b24e0f877c8dd.jpg" alt="かわいいレッサーパンダ" class="profile-img">
     <p>AIに作ってもらったレッサーパンダの紹介HTMLを、自分の手で書き直したい。</p>
 </div>
 
-   <div class="profile-box">
+   <div id="profile" class="profile-box">
      <h3>推し</h3>
      <p>角名くん（ハイキュー‼）</p>
      <p>最近一番好きな人。夢女子的に推してる。</p>
 </div>
 
-   <div class="profile-box">
+   <div id="profile" class="profile-box">
      <h3>性癖や好きなシチュなど</h3>
      <p>軍服、手袋、身長差、体格差、方言</p>
      <p>どんどん増やす予定。</p>
 </div>
 
-   <div class="profile-box">
+   <div id="profile" class="profile-box">
      <h3>地雷</h3>
      <p>基本的に、愛がなければ全て無理！</p>
      <p>モブレ、NTR、バッドエンド、グロ</p>
 </div>
 
-   <div class="profile-box">
+   <div id="profile" class="profile-box">
      <h3>創作におけるモットー</h3>
      <p>愛は重ければ重いほどいい</p>
      <p>終わりよければすべてよし</p>
