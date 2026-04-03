@@ -60,6 +60,9 @@
     color: #555;          /* 文字の色 */
     text-decoration: none;
     writing-mode: vertical-rl; /* ★重要：文字を「縦書き」にする魔法！ */
+    display: flex;          /* 中身を自由に並べるモードにする */
+    justify-content: center; /* 縦方向（縦書きなので）の中央 */
+    align-items: center;     /* 横方向の中央 */
     padding: 15px 5px;
     border-radius: 5px 5px 0 0; /* 上だけ丸くして「本」っぽく */
     box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* 横に影をつけて立体感を出す */
