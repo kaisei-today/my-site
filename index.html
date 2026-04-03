@@ -51,7 +51,10 @@
     gap: 10px;            /* 本と本の隙間 */
     margin: 50px 0;
     border-bottom: 10px solid #8b4513; /* ★8pxの太さ、一本線、茶色！ */
-    padding-bottom: 0;                /* 本と板をピタッとくっつける */ }
+    padding-bottom: 0;                /* 本と板をピタッとくっつける */ 
+    max-width: 600px;  /* ★棚の最大の長さを決める（お好みで調整！） */ 
+    border-radius: 6px; /* 板の角をほんのり丸くする */
+    gap: 20px; }
 
 /* 本の背表紙のデザイン */
         .book-spine {
@@ -67,7 +70,6 @@
     align-items: center;     /* 横方向の中央 */
     padding: 15px 5px;
     border-radius: 5px 5px 0 0; /* 上だけ丸くして「本」っぽく */
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* 横に影をつけて立体感を出す */
     font-weight: bold;
     font-size: 20px;
     transition: 0.3s;
