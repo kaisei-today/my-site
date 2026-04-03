@@ -59,8 +59,12 @@ h2 { color: #6b8e23; }
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.05); /* ほんのり影をつけて紙っぽく */
-    border-left: 5px solid #ffcccc; /* 左側にアクセントカラーの線を引く */ }
-
+    border-left: 5px solid #00a3af; /* 左側にアクセントカラーの線を引く */
+    background-image: 
+        linear-gradient(#f0f0f0 1px, transparent 1px), /* 横線 */
+        linear-gradient(90deg, #f0f0f0 1px, transparent 1px); /* 縦線 */
+    background-size: 20px 20px; /* ★ここで方眼のサイズ（20px四方）を調整 */ }
+   
 .diary-date {
     font-size: 14px;
     color: #8d9999;
