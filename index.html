@@ -40,10 +40,39 @@
 
         .book-spine {
   display: inline-block;
-  transition: 0.3s; /* 動きをなめらかにする */ }
+  transition: 1s; /* 動きをなめらかにする */ }
 
-        .book-spine:hover {
-  transform: translateY(-15px); /* 上に15px持ち上げる！ */ }
+
+/* 本棚全体の並べ方 */
+        .bookshelf {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* 本の「下」を揃える */
+    gap: 10px;            /* 本と本の隙間 */
+    margin: 50px 0; }
+
+/* 本の背表紙のデザイン */
+        .book-spine {
+    display: block;
+    width: 60px;          /* 本の横幅 */
+    height: 200px;        /* 本の高さ（背表紙っぽく縦長に！） */
+    background-color: #ffcccc; /* 本の色（後で変えられます） */
+    color: #555;          /* 文字の色 */
+    text-decoration: none;
+    writing-mode: vertical-rl; /* ★重要：文字を「縦書き」にする魔法！ */
+    padding: 15px 5px;
+    border-radius: 5px 5px 0 0; /* 上だけ丸くして「本」っぽく */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* 横に影をつけて立体感を出す */
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer; }
+
+/* マウスを乗せた時の動き */
+         .book-spine:hover {
+    transform: translateY(-20px); /* ぴょこっと上に引き出す */
+    filter: brightness(1.1);      /* 少し明るくする */ }
+
 </style>
 </head>
 
