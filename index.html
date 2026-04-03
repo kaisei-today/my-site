@@ -65,6 +65,35 @@
         .book-spine:hover {
   transform: translateY(-15px); /* 上に15px持ち上げる！ */ }
 
+/* 1. サイト全体の余白をゼロにして、画面ぴったりに合わせる */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    scroll-behavior: smooth; /* スルスル動く魔法 */
+}
+
+/* 2. 本棚（トップ画面）を画面いっぱいに広げる */
+.bookshelf {
+    display: flex;
+    flex-wrap: wrap; /* 画面が狭くなったら折り返す */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   /* ★重要：画面の高さ100%分を占領する */
+    background-color: #fdfbf7; /* 背景色（お好みで！） */
+}
+
+/* 3. 各コンテンツ（自己紹介など）も画面いっぱいの大きさにする */
+.profile-box {
+    min-height: 100vh; /* ★重要：ここも画面1枚分の高さを確保 */
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* 余白を含めて計算する */
+}
+
     </style>
 </head>
 
