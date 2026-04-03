@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>作品集｜勉強中</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
+<style>
+body { display: flex;
+    flex-direction: column; /* 上から下に並べる */
+    min-height: 100vh;      /* 画面の高さ（100%）を最低限確保する */
+    margin: 0; background-color: #e6fafa; text-align: center; font-family: 'Yomogi', cursive; }
+      
+footer {
+    margin-top: auto;       /* 上側の余白を「自動」にして、一番下まで押し出す */
+    padding: 20px 0 5px 0;
+    font-size: 14px; }
+
+.mini-bookshelf {
+    background-color: #faf0e6; /* ヘッダーと同じ色にすると馴染むよ */
+    padding: 10px;
+    margin-bottom: 30px;
+    position: sticky; /* ★スクロールしても上についてくる魔法！ */
+    top: 0;
+    z-index: 100; }
+
+.nav-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px; }
+
+.nav-link:hover {
+    color: #8d9999; /* マウスを乗せると色が変わる */ }
+
+        /* 今いるページの文字のデザイン */
+.current-page {
+    color: ##8d9999;    /* 好きな色に変えてね！ */
+    font-weight: bold; /* 太字にする */
+    cursor: default;   /* マウスを置いても「指マーク」にならないようにする */
+    display: inline-block; /* ← これを入れると「文字選択」になりにくくなります */ }
+
+.current-page:hover { color: #8d9999; }
+
+.library-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left; /* 左揃えの方がお品書きっぽい */
+    padding: 20px; }
+
+.work-item {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #8d9999; /* 下に点線を引いて区切る */ }
+
+.work-title {
+    font-size: 22px;
+    color: #6b8e23;
+    text-decoration: none;
+    display: block; /* 一行まるごとリンクにする */
+    margin: 5px 0; }
+
+.work-title:hover {
+    color: #ffcccc; /* マウスを乗せると色が変わるワクワク感 */ }
+
+.category {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #eee;
+    color: #666; }
+       
+</style>
+</head>
+
+<body>
+    <nav class="mini-bookshelf">
+        <a href="index.html" class="nav-link">🏠 トップに戻る</a>
+        <a href="profile.html" class="nav-link">📝 自己紹介</a>
+        <a href="characters.html" class="nav-link">🌸 固定夢主</a>
+        <span class="nav-link current-page">📚 作品集</span>
+        <a href="log.html" class="nav-link">📜 近況報告</a>
+    </nav>
+
+<div class="library-container">
+    <h2>作品集</h2>
+    <p>PDFで開きます。新しいタブでゆっくり読んでね。</p>
+
+    <div class="work-item">
+        <span class="category tag-novel">小説</span>
+        <a href="happyend.pdf" target="_blank" rel="noopener" class="work-title">ハッピーエンドを求めます！</a>
+        <p class="work-desc">文芸部として最初に書いた話。いつかリメイクしたい。</p>
+    </div>
+
+    <div class="work-item">
+        <span class="category tag-poem">詩</span>
+        <a href="promise.pdf" target="_blank" rel="noopener"　class="work-title">やくそく</a>
+        <p class="work-desc">ミラノコルティナオリンピックに感化されて書いたもの。</p>
+    </div>
+</div>
+
