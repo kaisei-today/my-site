@@ -64,7 +64,6 @@
     display: block;
     width: 60px;          /* 本の横幅 */
     height: 200px;        /* 本の高さ（背表紙っぽく縦長に！） */
-    background-color: #ffcccc; /* 本の色（後で変えられます） */
     color: #555;          /* 文字の色 */
     text-decoration: none;
     writing-mode: vertical-rl; /* ★重要：文字を「縦書き」にする魔法！ */
@@ -77,6 +76,11 @@
     font-size: 20px;
     transition: 0.3s;
     cursor: pointer; }
+
+         .color1 { background-color: #ffcccc; }
+         .color2 { background-color: #cce5ff; }
+         .color3 { background-color: #ffccff; }
+         .color4 { background-color: #b2ffb2; }
 
 /* マウスを乗せた時の動き */
          .book-spine:hover {
@@ -97,10 +101,10 @@
     <h3>見に来てくれてありがとう！<br>個人サイトのように使っていけたらな、と思っています。</h3>
 
     <div class="bookshelf">
-    <a href="profile.html" class="book-spine">自己紹介</a>
-    <a href="characters.html" class="book-spine">固定夢主</a>
-    <a href="library.html" class="book-spine">作品集</a>
-    <a href="log.html" class="book-spine">近況報告</a>
+    <a href="profile.html" class="book-spine color1">自己紹介</a>
+    <a href="characters.html" class="book-spine color2">固定夢主</a>
+    <a href="library.html" class="book-spine color3">作品集</a>
+    <a href="log.html" class="book-spine color4">近況報告</a>
 </div>
 <footer>
     &copy; 2026 晴凪
