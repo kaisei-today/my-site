@@ -2,16 +2,37 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>近況報告｜今日も一日快晴</title>
+    <title>キャラクター 蒼竹｜今日も一日快晴</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
 
 <style>
 body { display: flex;
+    background-image: url("sakuratonihontou.jpg");
+    background-size: cover; /* 横幅100%、高さは自動 */
+    background-repeat: no-repeat; /* 写真を繰り返さない */
+    background-position: center; 
+    background-attachment: fixed; 
+    position: relative;
+    z-index: 0; 
+    font-family: 'Yomogi', cursive;
+            color: #333; /* 文字は濃いグレーで読みやすく */
+            text-align: center;
+            margin: 0;
     flex-direction: column; /* 上から下に並べる */
-    min-height: 100vh;      /* 画面の高さ（100%）を最低限確保する */
-    margin: 0; background-color: #e6fafa; text-align: center; font-family: 'Yomogi', cursive; }
+    min-height: 100vh;      /* ★画面の高さ(100%)を最低限確保する */
+    margin: 0; }
+
+body::before {
+    content: "";
+    position: fixed; /* 画面に固定 */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* ★ここが重要！ rgba(赤, 緑, 青, 透明度) */
+    /* 最後の「0.7」が透明度（0〜1）。数字が小さいほど透明！ */
+    background-color: rgba(255, 255, 255, 0.7); /* 白い幕を70%の濃さで */
+    z-index: -1; /* 文字の後ろに回す */ }            
       
 footer {
     margin-top: auto;       /* 上側の余白を「自動」にして、一番下まで押し出す */
@@ -52,6 +73,88 @@ hr {
     display: inline-block; /* ← これを入れると「文字選択」になりにくくなります */ }
 
 .current-page:hover { color: #696969; }
+
+.main-content {
+            background-color: rgba(255, 255, 255, 0.8); /* ここも半透明の白！ */
+            max-width: 700px;
+            width: 85%;
+            margin: 10px auto;
+            padding: 40px;
+            border-radius: 20px; }
+
+h1 { color: #6b8e23; margin-top: 0; }
+h3 { font-weight: normal; }
+.main-content h4 { 
+            font-size: 18px;        
+            margin-top: 30px;
+            margin-bottom: 5px;}
+
+.midashi-title p { margin-top: 0px;}            
+
+.char-quote {
+            font-size: 1.3rem;
+            color: #555;
+            border-left: 5px solid #c3d825; /* 若草色の縦線 */
+            padding: 20px;
+            margin: 5px 100px;
+            text-align: left;
+            border-radius: 5px;  }
+
+.status-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0; }
+
+.status-table td {
+            border-bottom: 1px dashed #ccc;
+            padding: 10px 5px;
+            text-align: left; }
+
+.status-label { font-weight: bold; color: #666; width: 30%; }
+
+/* 外枠のデザイン */
+.serif-details {
+    margin: 20px auto;
+    border: none; /* 若草色の点線 */
+    border-radius: 10px;
+    overflow: hidden; /* 中身がはみ出さないように */ }
+
+/* クリックするボタン部分のデザイン */
+.serif-details summary {
+    background-color: #f0f5cc; /* 薄い若草色 */
+    padding: 15px;
+    cursor: pointer; /* マウスを乗せると指マークに */
+    font-weight: bold;
+    outline: none;
+    border: 2px dashed #c3d825; 
+    border-radius: 10px;        /* 角を丸くする */ }
+
+/* 中のテーブルの余白調整 */
+.serif-table { margin: 10px auto; /* 外枠との隙間をなくす */
+padding: 15px auto; }
+
+.serif-table td {
+    padding: 10px 5px; /* ★ [上下に20px] [左右に10px] の余白！ */ }
+
+.midashi-title { text-align: left;}
+
+/* ボックス内の見出しを若草色にする */
+.main-content h4 {
+    border-left: 5px solid #c3d825;
+    padding-left: 15px;
+    margin-top: 30px;
+    color: #555; }
+
+/* 引用部分（秘蔵の話など）を少し目立たせる */
+.history-quote {
+    background-color: #f9f9f9;
+    border-left: 3px solid #ccc;
+    border-right: 3px solid #ccc;
+    padding: 15px ;
+    margin: 20px 10px;
+    font-style: italic;
+    font-size: 0.95em;
+    line-height: 1.8; }
 </style>
 </head>
 
@@ -63,3 +166,246 @@ hr {
         <a href="library.html" class="nav-link">📚 作品集</a>
         <a href="log.html" class="nav-link">📜 近況報告</a>
 </nav>
+
+<div class="main-content">
+    <p>刀帳番号：百三十番</p>
+    <h1>蒼竹</h1>
+    <h3>粟田口　｜　太刀</h3>
+
+    <blockquote class="char-quote">
+        主君、今日も一日頑張りましょう
+    </blockquote>
+
+    <table class="status-table">
+        <tr>
+            <td class="status-label">生存</td>
+            <td>40（42）</td>
+            <td class="status-label">打撃</td>
+            <td>48（62）</td>
+        </tr>
+        <tr>
+            <td class="status-label">統率</td>
+            <td>43（50）</td>
+            <td class="status-label">機動</td>
+            <td>46 (60)</td>
+        </tr>
+        <tr>
+            <td class="status-label">衝力</td>
+            <td>30（37）</td>
+            <td class="status-label">偵察</td>
+            <td>40（49）</td>
+        </tr>
+        <tr>
+            <td class="status-label">隠蔽</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td class="status-label">必殺</td>
+            <td>42</td>
+        </tr>
+        <tr>
+            <td class="status-label">範囲</td>
+            <td>単</td>
+            <td class="status-label">兵装備</td>
+            <td>スロット3</td>
+        </tr>
+        <tr>
+            <td class="status-label">装備可能刀装</td>
+            <td colspan="3">軽歩/重歩/盾/軽騎/重騎/投石(夜戦のみ)</td>
+        </tr>
+
+        <tr>
+            <td class="status-label">ランクアップチャート</td>
+            <td colspan="3">蒼竹 → 蒼竹 特 (Lv25)</td>
+        </tr>
+
+        <tr>
+            <td class="status-label" style="vertical-align: top;">刀帳説明</td>
+            <td colspan="3" style="white-space: normal; text-align: left; line-height: 1.6;">
+                僕は蒼竹。ずっと北条家にいました。よく打刀と思われていますけど、れっきとした太刀ですから主君も間違えないでくださいよ。
+            </td>
+        </tr>
+
+        <tr>
+            <td class="status-label" style="vertical-align: top;">キャラクター紹介</td>
+            <td colspan="3" style="white-space: normal; text-align: left; line-height: 1.6;">
+                鎌倉時代の刀工である粟田口派の太刀。文献には刀工の名前が載っておらず、誰が作ったのか詳細は分からない。昔から北条家に伝わる刀であり、鶴丸国永とは旧知の仲。今日でも鶴丸国永との物語が数多く残されている。<br>審神者への忠誠心が高いのは、人の手によって守られてきた歴史があるからなのだろうか。
+            </td>
+        </tr>
+    </table>
+        
+    <details class="serif-details">
+    <summary>たくさんお話ししましょうね（クリックするとセリフが見れます）</summary>
+    <table class="status-table serif-table">
+        <tr>
+            <td class="status-label">ログイン(読み込み中)</td>
+            <td colspan="3">準備中ですから少し待ってくださいね</td>
+        </tr>
+        <tr>
+            <td class="status-label">ログイン(読み込み完了)</td>
+            <td colspan="3">刀剣乱舞、始まりますよ</td>
+        </tr>
+        <tr>
+            <td class="status-label">ログイン(ゲーム開始)</td>
+            <td colspan="3">主君、今日も一日頑張りましょう</td>
+        </tr>
+        <tr>
+            <td class="status-label">入手</td>
+            <td colspan="3">蒼竹といいます。僕が来たこと、驚きました？</td>
+        </tr>
+        <tr>
+            <td class="status-label">本丸</td>
+            <td colspan="3">なんで僕のことを打刀と間違えるんですかね。……背が低いから？</td>
+        </tr>
+        <tr>
+            <td class="status-label">　　</td>
+            <td colspan="3">主君の毎日は驚きに満ちてますか？　なんちゃって！</td>
+        </tr>
+        <tr>
+            <td class="status-label">　　</td>
+            <td colspan="3">ここにはいろんな刀がいますね。仲良くなりたいです</td>
+        </tr>
+        <tr>
+            <td class="status-label">本丸(放置)</td>
+            <td colspan="3">主君、そこにいますか？</td>
+        </tr>
+        <tr>
+            <td class="status-label">本丸(負傷)</td>
+            <td colspan="3">怪我には慣れてますから、なんてことはないですよ</td>
+        </tr>
+        <tr>
+            <td class="status-label">結成(隊長)</td>
+            <td colspan="3">お任せください。勝利を主君の手に</td>
+        </tr>
+        <tr>
+            <td class="status-label">結成(入替)</td>
+            <td colspan="3">部隊のみなさんは僕が守ります</td>
+        </tr>
+        <tr>
+            <td class="status-label">装備</td>
+            <td colspan="3">へぇ、こんなものを付けるんですね</td>
+        </tr>
+        <tr>
+            <td class="status-label">　　</td>
+            <td colspan="3">ぱわーあっぷ？とやらをした気分です</td>
+        </tr>
+        <tr>
+            <td class="status-label">　　</td>
+            <td colspan="3">大事に使います</td>
+        </tr>
+        <tr>
+            <td class="status-label">出陣</td>
+            <td colspan="3">それでは行ってまいります</td>
+        </tr>
+        <tr>
+            <td class="status-label">重傷時行軍警告</td>
+            <td colspan="3">本当に行くつもりですか？</td>
+        </tr>
+        <tr>
+            <td class="status-label">資源発見</td>
+            <td colspan="3">お！　いいもの見つけましたね</td>
+        </tr>
+        <tr>
+            <td class="status-label">ボス到達</td>
+            <td colspan="3">強そうですね……。僕たちの見せ場だ！</td>
+        </tr>
+        <tr>
+            <td class="status-label">索敵</td>
+            <td colspan="3">さぁて、布陣の穴を見つけますよ</td>
+        </tr>
+        <tr>
+            <td class="status-label">開戦(出陣)</td>
+            <td colspan="3">敵の首を狩るぞ！</td>
+        </tr>
+        <tr>
+            <td class="status-label">開戦(演練)</td>
+            <td colspan="3">容赦は必要なし！</td>
+        </tr>
+        <tr>
+            <td class="status-label">攻撃</td>
+            <td colspan="3">油断は禁物だが？</td>
+        </tr>
+        <tr>            
+            <td class="status-label">　　</td>
+            <td colspan="3">隙だらけだな</td>
+        </tr>
+        <tr>
+            <td class="status-label">会心の一撃</td>
+            <td colspan="3">その攻撃、見飽きたぞ！</td>
+        </tr>
+        <tr>
+            <td class="status-label">軽傷</td>
+            <td colspan="3">はは、面白くなってきた</td>
+        </tr>
+        <tr>
+            <td class="status-label">　　</td>
+            <td colspan="3">こんなもの、傷のうちにも入らない</td>
+        </tr>
+        <tr>
+            <td class="status-label">中傷/重傷</td>
+            <td colspan="3">っ……、これでおあいこだな……！</td>
+        </tr>
+        <tr>
+            <td class="status-label">真剣必殺</td>
+            <td colspan="3">ここまでやってくれたんだ、文句はないだろう！</td>
+        </tr>
+        <tr>
+            <td class="status-label">一騎打ち</td>
+            <td colspan="3">お前を倒さないと、主君に向ける顔がないんだ</td>
+        </tr>
+        <tr>
+            <td class="status-label">勝利MVP</td>
+            <td colspan="3">見ましたか、主君</td>
+        </tr>
+    </table>
+    </details>
+</div>
+
+<div class="main-content">
+    <h2 class="section-title">ゲームにおいて</h2>
+    
+    <div class="midashi-title">
+         <h4>現在の入手方法</h4>
+         <p>● 入手不可
+         <br>　○ 今後も定期的に登場予定</p>
+     </div>
+  <div class="midashi-title">
+         <h4>過去の入手方法</h4>
+        <p>＋ 期間限定鍛刀<br>＋ イベント報酬</p>
+  </div>
+  <div class="midashi-title">
+         <h4>ステータス</h4>
+         <p>● 全太刀の中で機動、隠蔽、偵察がトップ。しかし生存、統率がワーストなため、防御力は低い。
+         <br>　○ スロットが3つあるため、防御力の低さもある程度はカバー可。</p>
+         <p>● 全体的に打刀に寄っており、なぜか夜戦でも能力を発揮できる。</p>
+   </div>
+</div>
+
+<div class="main-content">
+    <h2 class="section-title">小ネタ</h2>
+    <div class="midashi-title"> 
+         <h4>来歴</h4>
+         <p>● 鎌倉時代中期に山城国の刀工である粟田口派によって作られた。時の執権であった北条家の宝刀であったと伝わる。
+         <br>　○ 当時、北条氏と安達氏は親戚関係にあり関係も良好であった。
+         <br>　○ 安達氏が持っていた鶴丸国永とは並べて飾られることも多く、その時の二振りの様子が後の伝承の基盤となったと考えられる。</p>
+         <p>● 霜月騒動で鶴丸国永との別れを経験したが、北条貞時が鶴丸国永を墓から掘り起こしたことで再会。
+         <br>　○ 再び二振りが並ぶ姿を見ることになるが、この時期の二振りに関する物語は暗いものが多い。</p>
+         <p>● 元弘3年(1333年)に鎌倉幕府が滅亡する際、蒼竹は北条の生き残りと共に鎌倉を脱出。この時を最後に、鶴丸国永とは永遠の別れを迎えることになる。</p>
+    <blockquote class="history-quote">
+        この記録を最後に長らく蒼竹は行方不明となっていたが、現代に入り北条の末裔とされる旧家によって秘蔵されていたことが判明。<br>
+        所有者の強い意向により、博物館への寄贈や一般公開は一切行われていない。
+    </blockquote>
+</div>
+
+    <div class="midashi-title">
+         <h4>台詞</h4>
+         <p>● 刃長は二尺五寸(約75.8cm)。これは打刀と太刀の境界のギリギリである。本人がよく口にする「打刀と間違えられる」のはこの長さのせいだろう。
+         <br>　○文献には「太刀」と明記されているが、長さ自体は打刀とも太刀ともとれるため混乱が生じていると考えられる。</p>
+         <p>●好戦的なセリフが多いのは、実戦で多く使われていたためか。</p>
+    </div>
+</div>
+<footer>
+    &copy; 2026 晴凪
+</footer>
+</body>
+</html>
