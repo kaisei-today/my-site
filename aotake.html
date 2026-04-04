@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>近況報告｜今日も一日快晴</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
+<style>
+body { display: flex;
+    flex-direction: column; /* 上から下に並べる */
+    min-height: 100vh;      /* 画面の高さ（100%）を最低限確保する */
+    margin: 0; background-color: #e6fafa; text-align: center; font-family: 'Yomogi', cursive; }
+      
+footer {
+    margin-top: auto;       /* 上側の余白を「自動」にして、一番下まで押し出す */
+    padding: 20px 0 5px 0;
+    font-size: 14px; }
+
+h2 { color: #6b8e23; }
+
+hr { 
+    border: none;
+    border-top: 2px dashed #2e2930; 
+    margin: 40px auto;
+    width: 80%;}
+
+.mini-bookshelf {
+    background-color: #faf0e6; /* ヘッダーと同じ色にすると馴染むよ */
+    padding: 10px;
+    margin-bottom: 30px;
+    position: sticky; /* ★スクロールしても上についてくる魔法！ */
+    top: 0;
+    z-index: 100; }
+
+.nav-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px; }
+
+.nav-link:hover {
+    color: #8d9999; /* マウスを乗せると色が変わる */ }
+
+        /* 今いるページの文字のデザイン */
+.current-page {
+    color: #696969;    /* 好きな色に変えてね！ */
+    font-weight: bold; /* 太字にする */
+    cursor: default;   /* マウスを置いても「指マーク」にならないようにする */
+    display: inline-block; /* ← これを入れると「文字選択」になりにくくなります */ }
+
+.current-page:hover { color: #696969; }
+</style>
+</head>
+
+<body>
+<nav class="mini-bookshelf">
+        <a href="index.html" class="nav-link">🏠 トップに戻る</a>
+        <a href="profile.html" class="nav-link">📝 自己紹介</a>
+        <span class="nav-link current-page">🌸 キャラクター</span>
+        <a href="library.html" class="nav-link">📚 作品集</a>
+        <a href="log.html" class="nav-link">📜 近況報告</a>
+</nav>

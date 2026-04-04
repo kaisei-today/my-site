@@ -46,6 +46,39 @@ h2 { color: #6b8e23; }
     display: inline-block; /* ← これを入れると「文字選択」になりにくくなります */ }
 
 .current-page:hover { color: #696969; }
+
+/* 二次・一次のセクションを囲む箱 */
+.char-section {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px; }
+
+/* カードを横に並べる魔法 */
+.char-grid {
+    display: flex;
+    flex-wrap: wrap; /* 画面幅が狭いと自動で折り返す */
+    justify-content: center;
+    gap: 10px; /* カード同士の隙間 */ }
+
+/* 1人分のカード */
+.char-card {
+    width: 150px; /* スマホでも見やすい幅 */
+    text-decoration: none; /* リンクの下線を消す */
+    color: inherit;
+    transition: transform 0.3s; /* 0.3秒かけて動く */ }
+
+.char-card:hover {
+    transform: translateY(-5px); /* マウスを乗せると少し浮く */ }
+
+.char-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover; /* 画像を枠にピッタリ合わせる */
+    border-radius: 10px; /* 角を丸くする */ }
+
+.char-name {
+    margin-top: 10px;
+    font-size: 15px; }
 </style>
 </head>
 
@@ -58,7 +91,81 @@ h2 { color: #6b8e23; }
         <a href="log.html" class="nav-link">📜 近況報告</a>
 </nav>
 
-<h2>準備中だよ</h2>
+<section class="char-section">
+    <h2>固定夢主</h2>
+    
+    <div class="char-grid">
+        <a href="aotake.html" class="char-card">
+            <img src="sakuratonihontou.jpg" class="char-img">
+            <div class="char-name">蒼竹</div>
+        </a>
+    
+        <a href="ibuki.html" class="char-card">
+            <img src="gakuhu.jpg" class="char-img">
+            <div class="char-name">生沢 伊吹</div>
+        </a>
+    
+        <a href="seitarou.html" class="char-card">
+            <img src="kanyou.jpg" class="char-img">
+            <div class="char-name">坂田 清太郎</div>
+        </a>
+    
+        <a href="hayate.html" class="char-card">
+            <img src="bare-.jpeg" class="char-img">
+            <div class="char-name">満田 颯</div>
+        </a>
+    
+        <a href="hina.html" class="char-card">
+            <img src="namae.webp" class="char-img">
+            <div class="char-name">麻道 日南</div>
+        </a>
+    </div>
+</section>
+
+<section class="original-area">
+    <h2>オリジナル</h2>
+
+    <div class="cp-group">
+        <h3>BL: こうみつ</h3>
+        <div class="char-grid">
+            <a href="kurose.html" class="char-card">
+                <img src="tabako.jpg" class="char-img">
+                <div class="char-name">黒瀬 恒</div>
+            </a>
+            <a href="sinnmiya.html" class="char-card">
+                <img src="himawari.jpg" class="char-img">
+                <div class="char-name">新宮 光城</div>
+            </a>
+        </div>
+
+        <h3>BL: ふづかえ</h3>
+        <div class="char-grid">
+            <a href="siromi.html" class="char-card">
+                <img src="siromi.jpg" class="char-img">
+                <div class="char-name">城見 風月</div>
+            </a>
+            <a href="tayu.html" class="char-card">
+                <img src="kaede.jpg" class="char-img">
+                <div class="char-name">田結 楓</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="cp-group">
+        <h3>NL: づきひら</h3>
+        <div class="char-grid">
+            <a href="kouduki.html" class="char-card">
+                <img src="kouduki.jpeg" class="char-img">
+                <div class="char-name">高月 皇志</div>
+            </a>
+            <a href="hirano.html" class="char-card">
+                <img src="sidu.jpeg" class="char-img">
+                <div class="char-name">平野 詩都</div>
+            </a>
+        </div>
+    </div>
+</section>
+
 
 <footer>
     &copy; 2026 晴凪
