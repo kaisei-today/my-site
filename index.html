@@ -2,110 +2,194 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今日も一日快晴</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
-<link rel="icon" href="sun.png">
-<meta name="google-site-verification" content="x-VsNYslCUCSZ2ou-CdC0qnKCzxem_sI4PYhdI3FnPQ" />
+    <!-- Google Fonts: さわらび明朝 -->
+<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="icon" href="sun.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 基本設定 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f7fbfc; /* 柔らかな水色 */
+            color: #4a5555;
+            font-family: 'Sawarabi Mincho', serif;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-<style>
-        body { display: flex;
-    flex-direction: column; /* 上から下に並べる */
-    min-height: 100vh;      /* 画面の高さ（100%）を最低限確保する */
-    margin: 0; background-color: #e6fafa; text-align: center; font-family: 'Yomogi', cursive; }
-        header { 
-    margin: 0;   /* 上の余白だけを 0 にする */
-    padding: 40px 0; 
-    margin-bottom: 30px; /* 下のコンテンツとの隙間 */
-    background-color: #faf0e6; }
-    
-    header h1 {
-    margin: 0; 
-    font-size: 80px; 
-    color: #8d9999; }
- 
-    header p {
-    margin: 30px 0 0 0; 
-    font-size: 20px;
-    color: #8d9999; }
+        /* ヘッダーエリア */
+        header {
+            background-color: #faf0e6;
+            padding-top: 10px;
+            text-align: center;
+        }
 
-        h2 { 
-    margin-top: 0; 
-    font-size: 40px; 
-    color: #52662c; /* 色を変えてみたよ */ }
-      
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 0.2em;
+            color: #7a8888;
+        }
+
+        /* ナビゲーション（タブ） */
+        nav {
+            background-color: #faf0e6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 7px 20px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            text-decoration: none;
+            color: #667777;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #e4d2d8;
+            color: #52662c;
+        }
+
+/* ボックス自体の設定 */
+        .info-box {
+            background-color: #fff;
+            padding: 40px 25px; /* 上下の余白をたっぷり取るとおしゃれに見えます */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* 影を少し柔らかく */
+            margin: 50px 50px;
+            text-align: left;
+        }
+
+        /* ボックスの中の見出し */
+        h2 {
+            font-size: 1.6rem;
+            border-bottom: 1px solid #d1e5e5;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+            color: #52662c;
+            letter-spacing: 0.1em;
+            text-align: center;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 200px;
+            overflow-y: auto; /* 履歴が増えたらスクロール */
+            font-size: 0.95rem;
+        }
+
+        .info-list li {
+            padding: 8px ;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+        }
+
+        .info-list li span.date {
+            width: 120px;
+            color: #99a8a8;
+            font-weight: bold;
+        }
+
+        /* フッター */
         footer {
-    margin-top: auto;       /* 上側の余白を「自動」にして、一番下まで押し出す */
-    padding: 20px 0 5px 0;
-    font-size: 14px; }
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+        }
 
-        .book-spine {
-  display: inline-block;
-  transition: 1s; /* 動きをなめらかにする */ }
+        .sns-links {
+            margin-bottom: 10px; /* コピーライトとの隙間 */
+            text-align: center;
+        }
 
+        .sns-links a {
+            color: #7a8888; /* アイコンの色（ヘッダーの文字色に合わせました） */
+            font-size: 2.0rem; /* アイコンの大きさ */
+            text-decoration: none;
+            transition: 0.3s;
+        }
 
-/* 本棚全体の並べ方 */
-        .bookshelf {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; /* 本の「下」を揃える */
-    gap: 10px;            /* 本と本の隙間 */
-    margin: 50px 0;
-    border-bottom: 10px solid #8b4513; /* ★8pxの太さ、一本線、茶色！ */
-    padding-bottom: 0;                /* 本と板をピタッとくっつける */ 
-    max-width: 600px;  /* ★棚の最大の長さを決める（お好みで調整！） */
-    margin-left: auto;  /* ★左側の余白を「自動」にする */
-    margin-right: auto; /* ★右側の余白を「自動」にする */ 
-    border-radius: 6px; /* 板の角をほんのり丸くする */
-    gap: 20px; 
-    padding: 0 40px }
+        .sns-links a:hover {
+            color: #f6bfbc; /* マウスを乗せた時の色（見出しの色） */
+            opacity: 0.7;
+        }
 
-/* 本の背表紙のデザイン */
-        .book-spine {
-    display: block;
-    width: 60px;          /* 本の横幅 */
-    height: 200px;        /* 本の高さ（背表紙っぽく縦長に！） */
-    color: #555;          /* 文字の色 */
-    text-decoration: none;
-    writing-mode: vertical-rl; /* ★重要：文字を「縦書き」にする魔法！ */
-    display: flex;          /* 中身を自由に並べるモードにする */
-    justify-content: center; /* 縦方向（縦書きなので）の中央 */
-    align-items: center;     /* 横方向の中央 */
-    padding: 15px 5px;
-    border-radius: 5px 5px 0 0; /* 上だけ丸くして「本」っぽく */
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.3s;
-    cursor: pointer; }
+        /* 今いるページのタブの色 */
+        nav ul li a.current {
+            background-color: #e4d2d8; /* ホバー時と同じ色に */
+            color: #52662c;            /* 文字色も強調 */
+        }
 
-         .color1 { background-color: #ffcccc; }
-         .color2 { background-color: #b7b7ff; }
-         .color3 { background-color: #ffccff; }
-
-/* マウスを乗せた時の動き */
-         .book-spine:hover {
-    transform: translateY(-20px); /* ぴょこっと上に引き出す */
-    filter: brightness(1.1);      /* 少し明るくする */ }
-
-</style>
+    </style>
 </head>
 
 <body>
-  <header>
-    <h1>今日も一日快晴</h1>
-    <p>おしゃれでかわいいを頑張るぞ💪</p>
-  </header>
+
+    <header>
+        <h1>今日も一日快晴</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="current">トップ</a></li>
+            <li><a href="characters.html">キャラクター紹介</a></li>
+            <li><a href="library.html">小説・詩</a></li>
+            <li><a href="review.html">感想</a></li>
+        </ul>
+    </nav>
+    </header>
+
+
+        <!-- 更新履歴をひとつのボックスにまとめる -->
+        <div class="info-box">
+            <h2>更新履歴</h2>
+            <ul class="info-list">
+                <li><span class="date">2026.05.03</span> サイトのリニューアル</li>
+                <li><span class="date">2026.04.06</span> キャラクター紹介、感想フォームのタブを追加</li>
+                <li><span class="date">2026.04.03</span> サイト初公開</li>
+            </ul>
+        </div>
+
+        <!-- このサイトについても同様にひとつのボックスにまとめる -->
+        <div class="info-box">
+            <h2>このサイトについて</h2>
+            <div style="text-align: left; display: inline-block; font-size: 0.95rem;">
+                <p>・BLD要素が大いに含まれる、非公式二次創作作品などの置き場です。</p>
+                <p>・作者が書きたいものを書いています。</p>
+                <p>・感想は365日ずっと欲しいです。</p>
+            </div>
+        </div>
    
-    <h2>Hello World!<br>Harunagi's Coding Journey Starts Here.</h2>
-
-    <h3>見に来てくれてありがとう！<br>個人サイトのように使っていけたらな、と思っています。</h3>
-
-    <div class="bookshelf">
-    <a href="profile.html" class="book-spine color1">自己紹介</a>
-    <a href="characters.html" class="book-spine color2">キャラクター</a>
-    <a href="library.html" class="book-spine color3">作品集</a>
+ <div class="sns-links">
+        <a href="https://x.com/nagi_haru_7" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
 </div>
+
 <footer>
     &copy; 2026 晴凪
 </footer>

@@ -2,51 +2,85 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>キャラクター｜今日も一日快晴</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
-<link rel="icon" href="sun.png">
+    <title>キャラクター紹介｜今日も一日快晴</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: さわらび明朝 -->
+<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="icon" href="sun.png">
 
 <style>
-body { display: flex;
-    flex-direction: column; /* 上から下に並べる */
-    min-height: 100vh;      /* 画面の高さ（100%）を最低限確保する */
-    margin: 0; background-color: #e6fafa; text-align: center; font-family: 'Yomogi', cursive; }
-      
-footer {
-    margin-top: auto;       /* 上側の余白を「自動」にして、一番下まで押し出す */
-    padding: 20px 0 5px 0;
-    font-size: 14px; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f7fbfc; /* 柔らかな水色 */
+            color: #4a5555;
+            font-family: 'Sawarabi Mincho', serif;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-h2 { color: #52662c; }
+        h2 {text-align: center;}
 
-.mini-bookshelf {
-    background-color: #faf0e6; /* ヘッダーと同じ色にすると馴染むよ */
-    padding: 10px;
-    margin-bottom: 30px;
-    position: sticky; /* ★スクロールしても上についてくる魔法！ */
-    top: 0;
-    z-index: 100; }
+        h3 {text-align: center;
+            color: #006400;}
 
-.nav-link {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-    font-size: 16px; }
+        /* ヘッダーエリア */
+        header {
+            background-color: #faf0e6;
+            padding-top: 10px;
+            text-align: center;
+        }
 
-.nav-link:hover {
-    color: #8d9999; /* マウスを乗せると色が変わる */ }
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+        }
 
-        /* 今いるページの文字のデザイン */
-.current-page {
-    color: #696969;    /* 好きな色に変えてね！ */
-    font-weight: bold; /* 太字にする */
-    cursor: default;   /* マウスを置いても「指マーク」にならないようにする */
-    display: inline-block; /* ← これを入れると「文字選択」になりにくくなります */ }
+        
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 0.2em;
+            color: #7a8888;
+        }
 
-.current-page:hover { color: #696969; }
+        /* ナビゲーション（タブ） */
+        nav {
+            background-color: #faf0e6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 7px 25px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            text-decoration: none;
+            color: #667777;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #e4d2d8;
+            color: #52662c;
+        }
 
 /* 二次・一次のセクションを囲む箱 */
 .char-section {
@@ -78,49 +112,61 @@ h2 { color: #52662c; }
     border-radius: 10px; /* 角を丸くする */ }
 
 .char-name {
-    margin-top: 10px;
-    font-size: 15px; }
+    margin-bottom: 5px;
+    font-size: 15px; 
+    text-align: center;}
+
+nav ul li a.current {
+            background-color: #e4d2d8; /* ホバー時と同じ色に */
+            color: #52662c;            /* 文字色も強調 */
+        }
 </style>
 </head>
 
 <body>
-<nav class="mini-bookshelf">
-        <a href="index.html" class="nav-link">🏠 トップに戻る</a>
-        <a href="profile.html" class="nav-link">📝 自己紹介</a>
-        <span class="nav-link current-page">🌸 キャラクター</span>
-        <a href="library.html" class="nav-link">📚 作品集</a>
-</nav>
+    <header>
+        <h1>今日も一日快晴</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="characters.html" class="current">キャラクター紹介</a></li>
+            <li><a href="library.html">小説・詩</a></li>
+            <li><a href="review.html">感想</a></li>
+        </ul>
+    </nav>
+    </header>
 
 <section class="char-section">
     <h2>固定夢主</h2>
     
     <div class="char-grid">
-        <a href="aotake.html" target=_blank rel="noopener" class="char-card">
+        <a href="aotake.html" class="char-card">
             <img src="sakuratonihontou.jpg" class="char-img">
             <div class="char-name">蒼竹</div>
         </a>
     
-        <a href="ibuki.html" target="_blank" rel="noopener" class="char-card">
+        <a href="ibuki.html" class="char-card">
             <img src="gakuhu.jpg" class="char-img">
             <div class="char-name">生沢 伊吹</div>
         </a>
     
-        <a href="seitarou.html" target="_blank" rel="noopener" class="char-card">
+        <a href="seitarou.html" class="char-card">
             <img src="kanyou.jpg" class="char-img">
             <div class="char-name">坂田 清太郎</div>
         </a>
     
-        <a href="hayate.html" target="_blank" rel="noopener" class="char-card">
+        <a href="hayate.html" class="char-card">
             <img src="bare-.jpeg" class="char-img">
             <div class="char-name">満田 颯</div>
         </a>
     
-        <a href="hina.html" target="_blank" rel="noopener" class="char-card">
+        <a href="hina.html" class="char-card">
             <img src="namae.webp" class="char-img">
             <div class="char-name">麻道 日南</div>
         </a>
 
-        <a href="ayato.html" target="_blank" rel="noopener" class="char-card">
+        <a href="ayato.html" class="char-card">
             <img src="akarui.avif" class="char-img">
             <div class="char-name">福井 絢斗</div>
         </a>
@@ -133,11 +179,11 @@ h2 { color: #52662c; }
     <div class="cp-group">
         <h3>BL: こうみつ</h3>
         <div class="char-grid">
-            <a href="kurose.html" target="_blank" rel="noopener" class="char-card">
+            <a href="kurose.html" class="char-card">
                 <img src="tabako.jpg" class="char-img">
                 <div class="char-name">黒瀬 恒</div>
             </a>
-            <a href="sinnmiya.html" target="_blank" rel="noopener" class="char-card">
+            <a href="sinnmiya.html" class="char-card">
                 <img src="himawari.jpg" class="char-img">
                 <div class="char-name">新宮 光城</div>
             </a>
@@ -145,11 +191,11 @@ h2 { color: #52662c; }
 
         <h3>BL: ふづかえ</h3>
         <div class="char-grid">
-            <a href="siromi.html" target="_blank" rel="noopener" class="char-card">
+            <a href="siromi.html" class="char-card">
                 <img src="siromi.jpg" class="char-img">
                 <div class="char-name">城見 風月</div>
             </a>
-            <a href="tayu.html" target="_blank" rel="noopener" class="char-card">
+            <a href="tayu.html" class="char-card">
                 <img src="kaede.jpg" class="char-img">
                 <div class="char-name">田結 楓</div>
             </a>
@@ -159,11 +205,11 @@ h2 { color: #52662c; }
     <div class="cp-group">
         <h3>NL: づきひら</h3>
         <div class="char-grid">
-            <a href="kouduki.html" target="_blank" rel="noopener" class="char-card">
+            <a href="kouduki.html" class="char-card">
                 <img src="kouduki.jpeg" class="char-img">
                 <div class="char-name">高月 皇志</div>
             </a>
-            <a href="hirano.html" target="_blank" rel="noopener" class="char-card">
+            <a href="hirano.html" class="char-card">
                 <img src="sidu.jpeg" class="char-img">
                 <div class="char-name">平野 詩都</div>
             </a>

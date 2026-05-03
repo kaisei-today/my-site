@@ -2,43 +2,49 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>黒瀬 恒 - キャラクター｜今日も一日快晴</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
-<link rel="icon" href="sun.png">
+    <title>キャラクター紹介｜今日も一日快晴</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="icon" href="sun.png">
 
 <style>
-body { display: flex;
-    background-image: url("tabako.jpg");
-    background-size: cover; /* 横幅100%、高さは自動 */
-    background-repeat: no-repeat; /* 写真を繰り返さない */
-    background-position: center; 
-    background-attachment: fixed; 
-    position: relative;
-    z-index: 0; 
-    font-family: 'Yomogi', cursive;
-            color: #333; /* 文字は濃いグレーで読みやすく */
-            text-align: center;
-            margin: 0;
-    flex-direction: column; /* 上から下に並べる */
-    min-height: 100vh;      /* ★画面の高さ(100%)を最低限確保する */
-    margin: 0; }
+body {
+    margin: 0;
+    padding: 0;
+    /* 好きな画像のURLを入れてください */
+    background-image: url("tabako.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 画面をスクロールしても画像は動かない設定 */
+    color: #4a5555;
+    font-family: 'Sawarabi Mincho', serif;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative; /* フィルターの基準にする */
+    z-index: 0;
+}
 
+/* 背景画像の上に重ねる白いフィルター */
 body::before {
     content: "";
-    position: fixed; /* 画面に固定 */
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    /* ★ここが重要！ rgba(赤, 緑, 青, 透明度) */
-    /* 最後の「0.7」が透明度（0〜1）。数字が小さいほど透明！ */
-    background-color: rgba(255, 255, 255, 0.7); /* 白い幕を70%の濃さで */
-    z-index: -1; /* 文字の後ろに回す */ }            
+    position: fixed; /* 画面全体に固定 */
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    /* rgbaの最後の数字「0.6」が濃さです。0.1（薄い）〜0.9（濃い）で調整してね */
+    background-color: rgba(255, 255, 255, 0.6); 
+    z-index: -1; /* 文字やコンテンツの後ろに回す */
+}
       
 footer {
     margin-top: auto;       /* 上側の余白を「自動」にして、一番下まで押し出す */
-    padding: 20px 0 5px 0;
-    font-size: 14px; }
+    padding: 10px;
+    font-size: 0.8rem; 
+    text-align: center;}
 
 hr { 
     border: none;
@@ -46,32 +52,52 @@ hr {
     margin: 40px auto;
     width: 80%;}
 
-.mini-bookshelf {
-    background-color: #faf0e6; /* ヘッダーと同じ色にすると馴染むよ */
-    padding: 10px;
-    margin-bottom: 30px;
-    position: sticky; /* ★スクロールしても上についてくる魔法！ */
+header {
+    background-color: #faf0e6;
+    padding-top: 10px;
+    text-align: center;}
+
+header h1 {
+    margin-bottom: 0;
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+    color: #7a8888;}
+
+/* ナビゲーション（タブ） */
+nav {
+    background-color: #faf0e6;
+    position: sticky;
     top: 0;
-    z-index: 100; }
+    z-index: 100;}
 
-.nav-link {
-    margin: 0 10px;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;}
+
+nav ul li a {
+    display: block;
+    padding: 7px 25px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     text-decoration: none;
-    color: #000000;
+    color: #667777;
     font-weight: bold;
-    font-size: 16px; }
+    transition: 0.3s;}
 
-.nav-link:hover {
-    color: #8d9999; /* マウスを乗せると色が変わる */ }
+nav ul li a:hover {
+    background-color: #e4d2d8;
+    color: #52662c;}
 
-        /* 今いるページの文字のデザイン */
-.current-page {
-    color: #696969;    /* 好きな色に変えてね！ */
-    font-weight: bold; /* 太字にする */
-    cursor: default;   /* マウスを置いても「指マーク」にならないようにする */
-    display: inline-block; /* ← これを入れると「文字選択」になりにくくなります */ }
+nav ul li a.current {
+            background-color: #e4d2d8; /* ホバー時と同じ色に */
+            color: #52662c;            /* 文字色も強調 */
+        }
 
-.current-page:hover { color: #696969; }
 
 .main-content {
             background-color: rgba(255, 255, 255, 0.8); /* ここも半透明の白！ */
@@ -80,7 +106,8 @@ hr {
             margin: 10px auto;
             padding: 40px;
             border-radius: 20px; 
-            letter-spacing: 0.1em;}
+            letter-spacing: 0.1em;
+            text-align: center;}
 
 h1 { color: #191970; margin-top: 0; }
 h1 small { font-size: 0.8em; color: #888; }
@@ -122,12 +149,18 @@ h3 { font-weight: normal; }
 </head>
 
 <body>
-<nav class="mini-bookshelf">
-        <a href="index.html" class="nav-link">🏠 トップに戻る</a>
-        <a href="profile.html" class="nav-link">📝 自己紹介</a>
-        <span class="nav-link current-page">🌸 キャラクター</span>
-        <a href="library.html" class="nav-link">📚 作品集</a>
-</nav>
+    <header>
+        <h1>今日も一日快晴</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="characters.html" class="current">キャラクター紹介</a></li>
+            <li><a href="library.html">小説・詩</a></li>
+            <li><a href="review.html">感想</a></li>
+        </ul>
+    </nav>
+    </header>
 
 <div class="main-content">
     <h1>黒瀬 恒 <small>Kurose Kou</small></h1>

@@ -2,148 +2,219 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>作品集｜今日も一日快晴</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
-<link rel="icon" href="sun.png">
+    <title>小説・詩｜今日も一日快晴</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: さわらび明朝 -->
+<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="icon" href="sun.png">
 
 <style>
-body { display: flex;
-    flex-direction: column; /* 上から下に並べる */
-    min-height: 100vh;      /* 画面の高さ（100%）を最低限確保する */
-    margin: 0; background-color: #e6fafa; text-align: center; font-family: 'Yomogi', cursive; }
-      
-footer {
-    margin-top: auto;       /* 上側の余白を「自動」にして、一番下まで押し出す */
-    padding: 20px 0 5px 0;
-    font-size: 14px; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f7fbfc; /* 柔らかな水色 */
+            color: #4a5555;
+            font-family: 'Sawarabi Mincho', serif;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-h2 { color: #52662c; }
+        h2 {text-align: center;}
 
-.mini-bookshelf {
-    background-color: #faf0e6; /* ヘッダーと同じ色にすると馴染むよ */
-    padding: 10px;
-    margin-bottom: 30px;
-    position: sticky; /* ★スクロールしても上についてくる魔法！ */
-    top: 0;
-    z-index: 100; }
+        h3 {text-align: center;
+            color: #006400;}
 
-.nav-link {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-    font-size: 16px; }
+        /* ヘッダーエリア */
+        header {
+            background-color: #faf0e6;
+            padding-top: 10px;
+            text-align: center;
+        }
 
-.nav-link:hover {
-    color: #8d9999; /* マウスを乗せると色が変わる */ }
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+        }
 
-        /* 今いるページの文字のデザイン */
-.current-page {
-    color: #696969;    /* 好きな色に変えてね！ */
-    font-weight: bold; /* 太字にする */
-    cursor: default;   /* マウスを置いても「指マーク」にならないようにする */
-    display: inline-block; /* ← これを入れると「文字選択」になりにくくなります */ }
+        
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 0.2em;
+            color: #7a8888;
+        }
 
-.current-page:hover { color: ##696969; }
+        /* ナビゲーション（タブ） */
+        nav {
+            background-color: #faf0e6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.library-container {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left; /* 左揃えの方がお品書きっぽい */
-    padding: 20px; }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-.work-item {
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #8d9999; /* 下に点線を引いて区切る */ }
+        nav ul li a {
+            display: block;
+            padding: 7px 25px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            text-decoration: none;
+            color: #667777;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-.work-title {
-    font-size: 22px;
-    color: #000000;
-    text-decoration: none;
-    display: block; /* 一行まるごとリンクにする */
-    margin: 5px 0; }
+        nav ul li a:hover {
+            background-color: #e4d2d8;
+            color: #52662c;
+        }
 
-.work-title:hover {
-    color: #f5b1aa; /* マウスを乗せると色が変わるワクワク感 */ }
+        nav ul li a.current {
+            background-color: #e4d2d8; /* ホバー時と同じ色に */
+            color: #52662c;            /* 文字色も強調 */
+        }
 
-.category {
-    font-size: 12px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    background: #eee;
-    color: #666; }
+        .library-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
 
-.tag-warning { color: #ff0000; }  
+        .guide-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #7a8888;
+            margin: 40px auto;
+        }
 
-.kansou-container { 
-    background-color: #00bfff;
-    max-width: 600px;
-    margin: 10px auto 10px auto;
-    text-align: center;
-    padding: 20px;
-    border-radius: 20px;
-    border: 2px dashed white; }
+        /* 各作品のカード */
+        .work-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-bottom: 30px;
+            text-align: left;
+            transition: 0.3s;
+            width: 300px;
+            box-sizing: border-box;            
+        }
 
-.kansou-title {
-    font-size: 15px;
-    color: white;
-    text-decoration: none;
-    display: block; }
+        .work-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+        }
 
-.kansou-title:hover { color: #fff599; }
+        .work-title {
+            font-size: 1.5rem;
+            color: #52662c;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .work-title:hover {
+            border-bottom: 1px solid #d1e5e5;
+        }
+
+        /* カテゴリタグ */
+        .category {
+            font-size: 0.75rem;
+            padding: 3px 12px;
+            border-radius: 15px;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        .tag-novel { background: #faf0e6; color: #cd853f; } 
+        .tag-original { background: #f0f7f7; color: #7a8888; } /* グレー系 */
+        .tag-fanfic { background: #f0f5cc; color: #6b8e23; } /* 黄緑系 */
+        .tag-poem { background: #f3f0fd; color: #8e81d3; } /* 紫系 */
+
+        .work-desc {
+            margin: 15px 0 0 0;
+            font-size: 0.95rem;
+            color: #667777;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+            margin-top: auto;
+        }
 </style>
 </head>
 
 <body>
-    <nav class="mini-bookshelf">
-        <a href="index.html" class="nav-link">🏠 トップに戻る</a>
-        <a href="profile.html" class="nav-link">📝 自己紹介</a>
-        <a href="characters.html" class="nav-link">🌸 キャラクター</a>
-        <span class="nav-link current-page">📚 作品集</span>
-    </nav>
+    <header>
+        <h1>今日も一日快晴</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="characters.html">キャラクター紹介</a></li>
+                <li><a href="library.html" class="current">作品集</a></li>
+                <li><a href="review.html">感想</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h2>PDFで開きます。新しいタブでゆっくり読んでね。</h2>
-    <h2>二次創作のタグが付いているものは、固定夢主の作品です。</h2>
-
-<div class="library-container">
-    <div class="work-item">
-        <span class="category tag-novel">小説</span>
-        <span class="category tag-original">一次創作</span>
-        <a href="happyend.pdf" target="_blank" rel="noopener" class="work-title">ハッピーエンドを求めます！</a>
-        <p class="work-desc">文芸部として最初に書いた話。いつかリメイクしたい。</p>
+    <div class="guide-text">
+            <p>二次創作のタグが付いているものは、固定夢主の作品です。<br>キャラクター紹介に載っている夢主もいますので、暇な時にでも見てくださると嬉しいです。</p>
     </div>
 
-    <div class="work-item">
-        <span class="category tag-novel">小説</span>
-        <span class="category tag-fanfic">二次創作（刀剣乱舞）</span>
-        <a href="beginning.pdf" target="_blank" rel="noopener" class="work-title">事の発端</a>
-        <p class="work-desc">もう続きは書かない気がする。</p>
+        <!-- 作品1 -->
+    <div class="library-container">
+        <div class="work-item">
+            <span class="category tag-novel">小説</span>
+            <span class="category tag-original">一次創作</span>
+            <br>
+            <a href="happyend.html" class="work-title">ハッピーエンドを求めます！</a>
+            <p class="work-desc">転生をテーマにしたお話。<br>尻切れトンボになってしまったので、いつかリメイクをしたいです。</p>
+        </div>
+
+        <!-- 作品2 -->
+        <div class="work-item">
+            <span class="category tag-novel">小説</span>
+            <span class="category tag-fanfic">二次創作（刀剣乱舞）</span>
+            <br>
+            <a href="beginning.html" class="work-title">事の発端</a>
+            <p class="work-desc">見習いによる本丸乗っ取りと、ブラック本丸の描写があります。<br>物語の終着点は決めているのですが、そこまで書き切ることが出来ませんでした。</p>
+        </div>
+
+        <!-- 作品3 -->
+        <div class="work-item">
+            <span class="category tag-poem">詩</span>
+            <br>
+            <a href="promise.html" class="work-title">やくそく</a>
+            <p class="work-desc">ミラノコルティナオリンピックに感化された、フィギュアスケートをテーマにしたものです。初めて書いた詩です。</p>
+        </div>
     </div>
 
-    <div class="work-item">
-        <span class="category tag-novel">小説</span>
-        <span class="category tag-fanfic">二次創作（ハイキュー‼）</span>
-        <span class="category tag-warning">R-18</span>
-        <a href="difference naight.pdf" target="_blank" rel="noopener" class="work-title">2人の夜の違い</a>
-        <p class="work-desc">結構書いてて楽しかった。</p>
-    </div>
- 
-    <div class="work-item">
-        <span class="category tag-poem">詩</span>
-        <a href="promise.pdf" target="_blank" rel="noopener" class="work-title">やくそく</a>
-        <p class="work-desc">ミラノコルティナオリンピックに感化されて書いたもの。</p>
-    </div>
-</div>
-
-<div class="kansou-container">
-    <a href="https://forms.gle/HKFpmAqgHfHV8KSX6" target="_blank" rel="noopener" class="kansou-title">💌 感想お待ちしています。</a>
-</div>
-
-<footer>
-    &copy; 2026 晴凪
-</footer>
+    <footer>
+        &copy; 2026 晴凪
+    </footer>
 </body>
 </html>
+
+
