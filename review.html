@@ -2,13 +2,14 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>感想｜今日も一日快晴</title>
+    <title>小説・詩｜今日も一日快晴</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Google Fonts: さわらび明朝 -->
 <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <link rel="icon" href="sun.png">
-   
-   <style>
-        /* 基本設定 */
+
+<style>
         body {
             margin: 0;
             padding: 0;
@@ -21,6 +22,11 @@
             min-height: 100vh;
         }
 
+        h2 {text-align: center;}
+
+        h3 {text-align: center;
+            color: #006400;}
+
         /* ヘッダーエリア */
         header {
             background-color: #faf0e6;
@@ -28,6 +34,13 @@
             text-align: center;
         }
 
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+        }
+
+        
         header h1 {
             margin: 0;
             font-size: 3rem;
@@ -54,7 +67,7 @@
 
         nav ul li a {
             display: block;
-            padding: 7px 20px;
+            padding: 7px 25px;
             margin-bottom: 5px;
             margin-left: 5px;
             margin-right: 5px;
@@ -74,6 +87,37 @@
             color: #52662c;            /* 文字色も強調 */
         }
 
+        /* トップページと同じ箱の設定 */
+        .info-box {
+            background-color: #fff;
+            padding: 40px 25px; /* 上下の余白をたっぷり取るとおしゃれに見えます */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* 影を少し柔らかく */
+            margin: 50px 50px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            border-bottom: 1px solid #d1e5e5;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+            color: #52662c;
+            letter-spacing: 0.1em;
+            text-align: center;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+/* フォームを囲むエリア */
+.form-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
 
         footer {
             text-align: center;
@@ -85,19 +129,33 @@
 </head>
 
 <body>
-        <header>
+    <header>
         <h1>今日も一日快晴</h1>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">トップ</a></li>
-            <li><a href="characters.html">キャラクター紹介</a></li>
-            <li><a href="library.html">小説・詩</a></li>
-            <li><a href="review.html" class="current">感想</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="characters.html">キャラクター紹介</a></li>
+                <li><a href="library.html">小説・詩</a></li>
+                <li><a href="review.html" class="current">感想</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <div class="info-box">
+        <h2>感想フォーム</h2>
+        
+        <p style="font-size: 1.2rem; margin-bottom: 30px; color: #667777;">
+            作品を読んでくださりありがとうございます！<br>
+            一言でも、しっかりした感想でも、いただけると泣いて喜びます。
+        </p>
+
+        <div class="form-wrapper">
+            <iframe src="https://forms.gle/K8ZTaQ89u6YX53BGA" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 晴凪
+    </footer>
 </body>
 </html>
-
